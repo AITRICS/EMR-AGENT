@@ -1,0 +1,269 @@
+=== SICDB Tables Information ===
+
+
+
+[Welcome to SICdb Documentation]
+The SICdb dataset provides insight to over 27 thousand intensive care admissions, including therapy and data of their preceding surgery. Data was collected between 2013 and 2021 from 4 of the intensive care units at the University Hospital Salzburg, having more than 3 thousand intensive care admissions per year on 41 beds. The dataset is deidentified and contains, amongst others, case information, laboratory, medication, monitor and respirator signal data.SICdb provides aggregated once-per-hour and highly granular once-per-minute data.
+The dataset, version 1.0.8, includes data from more than 27,350 admissions to the Department of Anesthesiology and Intensive Care Medicine at the General Hospital Salzburg and Paracelsus Medical University.
+
+
+[Data Tables]
+The SICdb dataset consists of billions of data entries across 7 data tables. The main table, "cases," contains a single entry for each intensive care admission and includes information about the patient (such as age, weight, and sex) and case details (such as diagnosis, scores, and ICD10 codes). The "TimeOfStay" field indicates the time from the first admission to a Metavision-enabled ward to the final closing of the case, including any preceding surgery. The "OffsetOfDeath" field indicates survival in seconds from admission. This data represents in-hospital mortality and may extend beyond the length of the intensive care stay or the current hospital stay. Personal data such as age, weight, and height have been grouped into bins of 5, with ages over 90 placed in the final bin.
+All other data tables are related to the "cases" table through the "CaseID" field. Most data has timing information, with the "offset" field indicating the number of seconds from admission to the time of the event. The "laboratory" table contains laboratory values and the "medication" table provides data on administered drugs. There are several generic data tables that contain data sorted by type. The "data_ref" table contains additional nominal/categorical data, one entry per admission, and the "data_range" table documents items with a start and end time, such as data on central lines or drainages. The "data_float_h" table contains float data, aggregated once per hour, and includes most signal data. To reduce table size, minute data is serialized as a stream of IEEE 754 floats in the "data_float_h.rawdata" field. For further instructions on using this data, see the documentation found in Documentation.pdf or online [7], and refer to the unpacking script example provided on our GitHub repository [8].
+
+
+[Reference Table]
+Nominal data is encoded, and the reference table "d_references" provides additional information about the associated field. The referenced fields in all data tables correspond to the primary key of the "d_references" table, "ReferenceGlobalID." The "ReferenceValue" field in "d_references" gives the variable's value, and the "ReferenceUnit" field holds the unit or measurement, if applicable.
+
+
+[Data Format]
+GZip-compressed RFC 4180 comma-separated files are provided. The most current documentation, including table schemas, can be found online , and an offline copy is included in the files under the name Documentation.pdf. A GitHub repository has been created to share code, report issues, and discuss the dataset.
+Follow the instructions on Get Started documentation to begin!
+ 
+
+Get Started From SICDB Doc   Introduction SICdb dataset and the documentation, as of 04/24, in active development. We try to improve our project as fast as we can! Please contact us for every problem with data or software you find! We'd love to find some motivated researchers attain as much as possible from our dataset. Contact us if you face any issues! 
+The SICdb dataset is provided in compressed .csv files, the minute values are even more consolidated. Refer to the File List for detailed description of files. 
+The SICdb dataset contains billions of entries, therefore building up a database may present a challenge.  Usage Examples
+Scripting or Database Query examples for using SICdb are found at https://github.com/nrodemund/sicdb/tree/main/Examples Relational Database Import
+Refer to https://github.com/nrodemund/sicdb/tree/main/Import for some scripts for importing the dataset into a relational database system.   Retrieved from "https://www.sicdb.com/wiki/index.php?title=Get_Started&oldid=380"
+
+- Data Description
+ 
+
+Data Description From SICDB Doc   The SICdb dataset consists of multiple tables. The main tables are  cases,  d_references,  medication, data_float_h and data_ref. 
+Each admission creates one entry in table  cases and data is relationally connected via the field CaseID, which is available in each of the related tables. Time values are stored in field offset, which is time in seconds from admission. 
+Nearly all fields in the SICdb dataset, that can be encoded, are referenced in d_references, where field ReferenceGlobalID is related to specified field.
+Refer to File List for a description of each file.   Retrieved from "https://www.sicdb.com/wiki/index.php?title=Data_Description&oldid=186"
+
+- Case Description
+ 
+
+Case Description From SICDB Doc   Contents 1 Case Selection
+2 Intensive care or intermediate care?
+3 Unit Description
+4 Validation 
+Case Selection
+The SICdb dataset contains all admissions to metavision, that were treated on an intensive care unit. This includes patients that are admitted post-surgery as well as internal medicine cases. Note that non-surgical reasons for admission are highly underrepresentated in this dataset because most internal medicine patients are treated on a unit not using an electric PDMS. 
+All admissions to participating intensiv care units are included, as long as following conditions do not apply: Less the 10 minutes of Stay
+Missing mandatory admission data
+No monitor signals
+No medication data
+hospital number mismatch
+Intensive care or intermediate care?
+To provide as much data as possible all patients admitted to one of our intensive or intermediate care units are included. While the associated beds have a designated care level, the patients treatment level is not defined and are treated according to their needs, they may be transferred multiply between the strongly cooperating units. In general, patients that are uniquely associated (see unitlog) to INIC or INID did not receive high level intensive care treatment. Please note that the field cases.HospitalUnit gives no information about the level of intensive care a patient received. We may provide a preprocessed field in future versions of the SICdb dataset concerning the level of treatment. Unit Description
+The participating metavision enabled wards are CWIN, INBD, INIC, and INIC. INCV and CWCV are used for cases associated with SARS-COV-2, this includes SARS-COV-2 ARDS and patients with coincidental positive test and other cause of intensive care. CWIN and INBD, INCV and CWCVC are high level intensive care units. INIC and INID are lower level of care and do not provide invasive mechanical ventilation (NIV possible on INID, HFNC on all wards), CRRT or ECMO.  
+Validation
+All cases are cross-matched with a second database. In case of unsuccessful matching, cases were excluded, as these refer to entries for testing and demo.  
+The dataset is in constant development. Feel free to contact us when you find a significant amount of invalid data.   Retrieved from "https://www.sicdb.com/wiki/index.php?title=Case_Description&oldid=378"
+
+The Dataset contains, amongst others, following data:
+- Case Data
+ 
+Table columns:
++----------------------------------+------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| Name                             | Type                                                             | Description                                                                            |
++----------------------------------+------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| CaseID                           | Integer                                                          | A randomly assigned identifier                                                         |
+| PatientID                        | Integer                                                          | A randomly assigned identifier                                                         |
+| AdmissionYear                    | Integer                                                          | Year of admission                                                                      |
+| TimeOfStay                       | Integer                                                          | Time of stay (seconds)                                                                 |
+| ICUOffset                        | Integer                                                          | Time of actual ICU admission                                                           |
+| saps3                            | Float                                                            | Simplified Acute Physiology Score III                                                  |
+| HospitalDischargeType            | Reference                                                        | Type of hospital discharge.                                                            |
+| HospitalDischargeDay             | Integer                                                          | The day of hospital discharge after admission                                          |
+| HospitalStayDays                 | Integer                                                          | Days stayed in hospital for this case, including pre icu.                              |
+| DischargeState                   | Reference                                                        | Type of icu discharge                                                                  |
+| DischargeUnit                    | Reference                                                        | Unit the patient was discharged to, as selected in Metavision discharge form           |
+| OffsetOfDeath                    | Integer                                                          | 1-year mortality in seconds from primary admission to death                            |
+| EstimatedSurvivalObservationTime | Reference                                                        | Estimation of oversation time, either 1-year or 6-month                                |
+| Sex                              | Reference                                                        |                                                                                        |
+| WeightOnAdmission                | Float                                                            | Rounded to +-5kg                                                                       |
+| HeightOnAdmission                | Float                                                            | Rounded to +-5cm                                                                       |
+| AgeOnAdmission                   | Integer                                                          | Rounded to +-5y, over 90 set to 90                                                     |
+| HospitalUnit                     | Reference                                                        | Last unit using this case                                                              |
+| ReferringUnit                    | Reference                                                        | Referring unit as selected in admission form                                           |
+| ICD10Main                        | Text                                                             | ICD10 main code                                                                        |
+| ICD10MainText                    | Text                                                             | ICD10 main text                                                                        |
+| SurgicalSite                     | Reference                                                        |                                                                                        |
+| InterventionsText                | Text                                                             | List of interventions                                                                  |
+| HoursOfCRRT                      | Integer                                                          | Hours of continuous renal replacement threapy this admission **                        |
+| AdmissionFormHasSepsis           | Reference                                                        | A mandatory field in the admission form **                                             |
+| HeartSurgeryAdditionalData       | For heart surgery patients there is additional data collected ** | Yes if applicable                                                                      |
+| HeartSurgeryCPBTime              | Integer                                                          | Bypass time **                                                                         |
+| HeartSurgeryBeginOffset          | Integer                                                          | Offset in seconds from ICU admission to cut **                                         |
+| HeartSurgeryEndOffset            | Integer                                                          | Offset in seconds from ICU admission to end of surgery**                               |
+| OffsetAfterFirstAdmission        | Integer                                                          | If a patient has more than one admission, this is the offset in seconds from the first |
++----------------------------------+------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+
+Table columns:
++------------------------------+------------+---------------------------------------------------------------------------------------------------------------------------+
+| Name                         | Type       | Description                                                                                                               |
++------------------------------+------------+---------------------------------------------------------------------------------------------------------------------------+
+| PremedicationBetablocker     | Referenced | Yes/No                                                                                                                    |
+| PremedicationACEInhibitor    | Referenced | Yes/No                                                                                                                    |
+| PremedicationStatin          | Referenced | Yes/No                                                                                                                    |
+| PremedicationDiuretic        | Referenced | Yes/No                                                                                                                    |
+| PreconditionDiabetes         | Referenced | Any type of diabetes (IDDM or NIDDM)                                                                                      |
+| PreconditionLungDisease      | Referenced | Any kind of lung severe disease (COPD, restrictive lung diseases, ...). Asthma is included when medication is taken daily |
+| PreconditionArtHypertension  | Referenced | Any kind of treated or diagnosed arterial hypertension                                                                    |
+| PreconditionRenalDysfunction | Referenced | If stated in admission protocol (omitted due to anonymity issues)                                                         |
++------------------------------+------------+---------------------------------------------------------------------------------------------------------------------------+
+
+
+Case Data From SICDB Doc   "The "cases" table is the base table of the SICdb dataset and the "CaseID" field serves as the identifier that relates all data. Each admission to the intensive care unit generates a unique "CaseID." To identify readmissions, a "PatientID" is provided. The "OffsetAfterFirstAdmission" field stores the time between the first admission and the current one.
+"TimeOfStay" is the time in seconds from the admission recorded by the MetaVision system to the discharge. This time may include any preceding surgery and ends when the case is closed.
+There are three fields indicating survival: "DischargeState" indicates the patient's state upon discharge from the ICU and is taken from the MetaVision discharge form. "HospitalDischargeType" provides information on how the case was closed in the clinical information system. "OffsetOfDeath" is the time in seconds from admission to death and includes additional hospital stays and out of hospital mortality. As it refers to a 1-year mortality it is set to null if death occurred more than one year after admission. 
+* These fields are not available on PhysioNet at the moment. Contact us for further information.
+** These fields will be moved to data tables in version 1.1.0 Linked Data
+Additional data to the case can be found in data_ref, which may have one entry per case and item type.
+Several fields have been preprocessed and added to the database. This includes peprocessed-for-convenience and preprocessed-for-anonymization elements. The data is found in data_ref.csv.gz, the text values are referenced in d_references, where d_references.ReferenceGlobalID relates to data_ref. FieldID and data_ref.RefID.  
+Known Limitations
+Time of stay
+In most cases at a readmission in same hospital stay a new case is created. In rare cases the preceding case is reopened causing that TimeOfStay includes the time patient was on normal ward. If this issue is important you may use the tranfer log or the lacking monitor signals to remove/repair these cases. This issue is on ToDo list for future releases   Retrieved from "https://www.sicdb.com/wiki/index.php?title=Case_Data&oldid=288"
+
+- Monitor Signal Data
+ 
+Table columns:
++----------------------+-------------------------------------------------------------------+---------+------+
+| Name                 | Description                                                       | Comment | Type |
++----------------------+-------------------------------------------------------------------+---------+------+
+| SignalCountHours     | Amount of hours where selected signal data is available           |         | OD   |
+| SignalAvg            | Average signal value of selected signal                           |         | OD   |
+| SignalMin            | Minimum hourly average signal value of selected signal            |         | OD   |
+| SignalMax            | Maximum hourly average signal value of selected signal            |         | OD   |
+| SignalHoursUnderX    | Amount of hours, where the average signal value is under X        |         | OD   |
+| SignalHoursOverX     | Amount of hours, where the average signal value is >= X           |         | OD   |
+| SignalHoursBetweenXY | Amount of hours, where the average signal value is >=Min and <Max |         | OD   |
+| SignalStd            | Standard deviation of average hourly values of selected signal    |         | OD   |
++----------------------+-------------------------------------------------------------------+---------+------+
+
+Table columns:
++---------+-----------+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| Name    | Type      | Description                           | Comment                                                                                                                     |
++---------+-----------+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| CaseID  | Integer   | Case identifier                       |                                                                                                                             |
+| DataID  | Reference |                                       |                                                                                                                             |
+| Offset  | Integer   | Time in seconds after admission       |                                                                                                                             |
+| Val     | Float     | Value                                 | The unit (if applicable) is found in d_references where data_float_h.DataID is associated to d_references.ReferenceGlobalID |
+| cnt     | Integer   | Amount of values aggregated           |                                                                                                                             |
+| rawdata | Blob      | List of 60 floats containing raw data | Due to excessive storage needs minute values have been aggregated.                                                          |
++---------+-----------+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+
+
+Signal Data From SICDB Doc   Data Description
+Various types of signal data has been included in the SICDb dataset. Signal data is saved in data_float_h table, value reference is found in d_references.
+Important note: Data stored in data_float_h is aggregated hourly data.  Predefined Fields (RooDataServer) Contains hourly float data associated with a case. If more (minute) data is available, data was aggregated and the corresponding values are stored in rawdata field. Refer to Deserialize Raw Data for more information. Metavision does, in database, not differentiate between qualitative (i.e. blood pressure) and quantitative (i.e. drainage volume) data, this was done programatically saving the sum instead of average. The field cnt indicates the amount of values aggregated.    
+Retrieved from "https://www.sicdb.com/wiki/index.php?title=Signal_Data&oldid=167"
+
+- Respiratory Care Data
+- Laboratory Data
+ 
+Table columns:
++-----------------+-----------+-------------------------------------------------------------+---------------------------------------------------+
+| Name            | Type      | Description                                                 | Comment                                           |
++-----------------+-----------+-------------------------------------------------------------+---------------------------------------------------+
+| id              | Integer   | Primary Key                                                 |                                                   |
+| CaseID          | Integer   | Case identifier                                             |                                                   |
+| PatientID       | Integer   | Patient identifier                                          |                                                   |
+| DrugID          | Reference |                                                             |                                                   |
+| Offset          | Integer   | Time in seconds after admission                             |                                                   |
+| LaboratoryValue | Float     | Value                                                       | Unity of measurement can be found in d_references |
+| LaboratoryType  | Reference | Used for special laboratory types, i.e. arterial blood gas. |                                                   |
++-----------------+-----------+-------------------------------------------------------------+---------------------------------------------------+
+
+Table columns:
++-------------------------+----------------------------------------------------------------------------------------+---------+------+
+| Name                    | Description                                                                            | Comment | Type |
++-------------------------+----------------------------------------------------------------------------------------+---------+------+
+| LaboratoryCount         | Amount of results of selected laboratory type in given offset                          |         | OD   |
+| LaboratoryAvg           | Average laboratory value of selected laboratory type in given offset                   |         | OD   |
+| LaboratoryMin           | Minimum laboratory value of selected laboratory type in given offset                   |         | OD   |
+| LaboratoryMax           | Maximum laboratory value of selected laboratory type in given offset                   |         | OD   |
+| LaboratoryFirstInOffset | First laboratory value of selected laboratory type in given offset                     |         | OD   |
+| LaboratoryXInOffset     | X (0=first, 1=second,...) laboratory value of selected laboratory type in given offset |         | OD   |
+| LaboratoryXInOffset     | Time (offset) of x laboratory value of selected laboratory type in given offset        |         | OD   |
+| SignalStd               | Standard deviation of average hourly values of selected signal                         |         | OD   |
++-------------------------+----------------------------------------------------------------------------------------+---------+------+
+
+
+Laboratory Data From SICDB Doc   Data Description laboratory.csv.gz
+The laboratory table contains all available lab data, in many cases including the pre-admission labs. 
+Like all "Reference" fields additional data like name and unit of measurement is found in d_references. See SQL Examples to learn how to connect them using a relational database system.
+To simplify lookup for labs of previous stays PatientID was added to this table.   Predefined Fields (RooDataServer)   Retrieved from "https://www.sicdb.com/wiki/index.php?title=Laboratory_Data&oldid=241"
+
+- Medication Data
+ 
+Table columns:
++-----------------+-----------+---------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+| Name            | Type      | Description                                                                                                   | Comment                                    |
++-----------------+-----------+---------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+| id              | Integer   | Primary Key                                                                                                   |                                            |
+| CaseID          | Integer   | Case identifier                                                                                               |                                            |
+| DrugID          | Reference |                                                                                                               |                                            |
+| Offset          | Integer   | Time in seconds after admission                                                                               |                                            |
+| OffsetDrugEnd   | Integer   | If drug was given continuously refers to end of application. Field is set to 60 seconds on bolus application. |                                            |
+| IsSingleDose    | Integer   | Set to 1 when given as bolus.                                                                                 |                                            |
+| Amount          | Float     | Full amount given regardless of time                                                                          | Unity of measurement found in d_references |
+| AmountPerMinute | Float     | Dosage per minute                                                                                             | Unity of measurement found in d_references |
++-----------------+-----------+---------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+
+
+Medication Data From SICDB Doc   Contents 1 Data Description
+2 Predefined Fields (RoDataServer)
+3 Known Limitations 3.1 Offsets and Times
+3.2 Different Reference for similar drugs  
+Data Description
+Contains all medication given during stay. Additional data like name and unit of measurement is found in d_references, where medication.DrugID is associated to d_references.ReferenceGlobalID. Metavision does not differ between continuous or single doses in rangesignals, so a single dose is set to 60 second admission time. Each change of a continuous application will end the current entry and create a new one.  
+Predefined Fields (RoDataServer)
+Known Limitations
+The medication data is generally considered as being widely valid. Nevertheless there are some limitations to be stated: Offsets and Times
+The offset is the documented time of drug application. As the observed intensive care unity do not use perfusor telemetry all values are entered manually. Following inaccuracies of of time give may be generally expected: +/- 5 minutes in anaesthesia settings
++/- 5 minutes in resuscitation settings
++/- 15 minutes in intensive care settings
+The difference is explained in different default view range in medication input forms. Different Reference for similar drugs
+Due to liberal laws concerning drug names in Austria not all drugs are correctly labeled by their INN name and sometimes multiple proprietary products for the same substance are used. The SICDB Team used an algorithm to identify and unify the medication data. There may be special cases where this procedure failed, for example at compound antihypertensive drugs.   Retrieved from "https://www.sicdb.com/wiki/index.php?title=Medication_Data&oldid=244"
+
+All nominal fields are referenced in table d_references .
+ 
+Table columns:
++-------------------+---------+-------------------------------------+-----------------------------------------------------------+
+| Name              | Type    | Description                         | Comment                                                   |
++-------------------+---------+-------------------------------------+-----------------------------------------------------------+
+| ReferenceGlobalID | Integer | The unique ID for the reference     | Use this identifier as dictionary for alle encoded fields |
+| ReferenceValue    | Text    | Reference value                     | i.e. "Creatinine"                                         |
+| ReferenceName     | Text    | The name of the reference           | i.e. "Laboratory"                                         |
+| ReferenceUnit     | Text    | The unit of this item if applicable | i.e. "mg/dl"                                              |
+| LOINC_code        | Text    | LOINC Code                          |                                                           |
+| LOINC_short       | Text    | LOINC SHORTNAME                     |                                                           |
+| LOINC_long        | Text    | LOINC LONG_COMMON_NAME              |                                                           |
++-------------------+---------+-------------------------------------+-----------------------------------------------------------+
+
+
+Reference Table From SICDB Doc   The d_references table contains information on all encoded data fields of the SICdb dataset. Each field, that has "Reference" as field type, is associated with the ReferenceGlobalID in the d_references table. Additionally ReferenceUnit describes the unit of measurement used for this field. Refer to chapter SQL Examples to learn how to easily use this table in relational databases. 
+Contents 1 Usage Information 1.1 SQL
+1.2 RooDataServer 
+2 Note 
+Usage Information
+d_references is the dictionary for all encoded data.  SQL
+Use a join query to get the reference value. 
+Example:  SELECT Sex,sRef.ReferenceValue as SexCaption FROM `cases` LEFT JOIN d_references as sRef ON SexRef.ReferenceGlobalID = cases.Sex; For more examples read  the  SQL Examples section RooDataServer
+ ReferenceSelection
+All fields using references provide simple filters to select references. 
+On export RooDataServer will per default export the text value of an encoding. 
+Note
+To reduce the amount of tables there is no table describing references as there is no significant gain of information expected. This may change in later versions of dataset. To enumerate a reference use table d_references.ReferenceName, which is an immutable, case sensitive key to a reference.   Retrieved from "https://www.sicdb.com/wiki/index.php?title=Reference_Table&oldid=283"
+
+While the raw Dataset in CSV files provides all possibilities to analyse and process data, it may be more convenient to browse in a fully configured and optimized database.
+The SICdb Team provides a software environment to quickly select, view and export data from the database in various formats.
+RooDataServer is a specific software created to access medical datasets like the SICDB Dataset.
+-- &gt; Quick Start &lt;--
+ 
+
+Get Started From SICDB Doc
+(Redirected from QuickStart)  
+Introduction SICdb dataset and the documentation, as of 04/24, in active development. We try to improve our project as fast as we can! Please contact us for every problem with data or software you find! We'd love to find some motivated researchers attain as much as possible from our dataset. Contact us if you face any issues! 
+The SICdb dataset is provided in compressed .csv files, the minute values are even more consolidated. Refer to the File List for detailed description of files. 
+The SICdb dataset contains billions of entries, therefore building up a database may present a challenge.  Usage Examples
+Scripting or Database Query examples for using SICdb are found at https://github.com/nrodemund/sicdb/tree/main/Examples Relational Database Import
+Refer to https://github.com/nrodemund/sicdb/tree/main/Import for some scripts for importing the dataset into a relational database system.   Retrieved from "https://www.sicdb.com/wiki/index.php?title=Get_Started&oldid=380"
+

@@ -1,0 +1,28 @@
+cases.`caseid` = data_float_h.`caseid`
+cases.`caseid` = data_range.`caseid`
+cases.`caseid` = data_ref.`caseid`
+cases.`caseid` = laboratory.`caseid`
+cases.`caseid` = medication.`caseid`
+data_float_h.`caseid` = data_range.`caseid`
+data_float_h.`caseid` = data_ref.`caseid`
+data_float_h.`caseid` = laboratory.`caseid`
+data_float_h.`caseid` = medication.`caseid`
+data_range.`caseid` = data_ref.`caseid`
+data_range.`caseid` = laboratory.`caseid`
+data_range.`caseid` = medication.`caseid`
+data_ref.`caseid` = laboratory.`caseid`
+data_ref.`caseid` = medication.`caseid`
+laboratory.`caseid` = medication.`caseid`
+
+cases.`patientid` = medication.`patientid`
+
+d_references.`referenceglobalid` = data_float_h.`dataid`
+d_references.`referenceglobalid` = data_range.`dataid`
+d_references.`referenceglobalid` = data_ref.`refid`
+d_references.`referenceglobalid` = laboratory.`laboratoryid`
+d_references.`referenceglobalid` = medication.`drugid`
+d_references.`referenceglobalid` = cases.`hospitaldischargetype`
+d_references.`referenceglobalid` = cases.`dischargestate`
+d_references.`referenceglobalid` = cases.`dischargeunit`
+d_references.`referenceglobalid` = cases.`estimatedsurvivalobservationtime`
+d_references.`referenceglobalid` = cases.`sex`

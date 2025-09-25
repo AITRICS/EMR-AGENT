@@ -1,0 +1,5 @@
+1. Note that all time information is recorded as minute-level offsets relative to the ICU admission time.
+2. Thus for hour-level features, you need to prepare the data by converting the minute-level offsets to hour-level offsets.
+3. Unitvisitnumber or patienthealthsystemstayid is NOT the patient's lifetime admission count but the number of ICU stays during one hospital admission (uniquepid is for lifetime admission count).
+4. The age column is stored as a string (or numeric but needs validation), cast it to text and apply a regular expression check.
+5. Apache related tables are all excluded to avoid confusion. Thus do not consider any apache related tables.

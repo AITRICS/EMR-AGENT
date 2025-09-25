@@ -1,0 +1,13 @@
+=== Starting New Run for baseline SQL ===
+Target Database: eicu
+Trial Number: 1
+Case Number: 1
+Case Name: 
+1. Cohort Selection: 
+2. Requested Features: 
+3. Timeseries Features: Heart rate
+=== Ablation Variants ===
+LLM Model: claude-3-5-sonnet-20240620
+Database Knowledge: db_and_manual_and_prior
+=========================================
+============= Matching for Heart rate =============

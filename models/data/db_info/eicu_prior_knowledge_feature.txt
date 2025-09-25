@@ -1,0 +1,7 @@
+1. Do not use any apache related tables such as apacheapsvar.
+2. Do not use nursecharting, respiratorycharting, and physicalexam tables
+3. For definition table search, use only "lab" table and do not reference any other tables.
+4. Do not use 'labid or patientunitstayid' as 'unique feature identifier' because it is a row-level event-level IDs.
+5. For time-series feature schema linking, use only "vitalperiodic" table for vitalsign (invasive) features
+6. For time-series feature schema linking, Use only "vitalaperiodic" table for vitalsign (non-invasive) features
+7. For time-series feature schema linking, use only "lab" table for laboratory features.

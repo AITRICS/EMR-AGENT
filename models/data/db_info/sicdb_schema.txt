@@ -1,0 +1,17 @@
+table public.cases, columns = [caseid, patientid, admissionyear, timeofstay, icuoffset, saps3, hospitaldischargetype, hospitaldischargeday, hospitalstaydays, dischargestate, dischargeunit, offsetofdeath, estimatedsurvivalobservationtime, sex, weightonadmission, heightonadmission, ageonadmission, hospitalunit, referringunit, icd10main, icd10maintext, diagnosist2, surgicalsite, hoursofcrrt, admissionurgency, admissionformhassepsis, surgicaladmissiontype, orbisdataavailable, heartsurgeryadditionaldata, heartsurgerycpbtime, heartsurgerycrossclamptime, heartsurgerybeginoffset, heartsurgeryendoffset, offsetafterfirstadmission]\
+table public.d_references, columns = [referenceglobalid, referencevalue, referencename, referencedescription, referenceunit, referenceorder, referencetype, data, loinc_code, loinc_short, loinc_long]\
+table public.data_float_h, columns = [id, caseid, dataid, offset, val, cnt, rawdata]\
+table public.data_range, columns = [id, caseid, dataid, offset, offsetend, data]\
+table public.data_ref, columns = [id, caseid, fieldid, refid]\
+table public.laboratory, columns = [id, caseid, laboratoryid, offset, laboratoryvalue, laboratorytype]\
+table public.medication, columns = [id, caseid, patientid, drugid, offset, offsetdrugend, issingledose, amount, amountperminute, givenstate]\
+foreign_keys = [cases.caseid = data_float_h.caseid, cases.caseid = data_range.caseid\
+cases.caseid = data_ref.caseid, cases.caseid = laboratory.caseid\
+cases.caseid = medication.caseid, data_float_h.caseid = data_range.caseid\
+data_float_h.caseid = data_ref.caseid, data_float_h.caseid = laboratory.caseid\
+data_float_h.caseid = medication.caseid, data_range.caseid = data_ref.caseid\
+data_range.caseid = laboratory.caseid, data_range.caseid = medication.caseid\
+data_ref.caseid = laboratory.caseid, data_ref.caseid = medication.caseid\
+laboratory.caseid = medication.caseid, cases.patientid = medication.patientid, d_references.referenceglobalid = data_float_h.dataid, d_references.referenceglobalid = data_range.dataid, \
+d_references.referenceglobalid = data_ref.refid, d_references.referenceglobalid = laboratory.laboratoryid\
+d_references.referenceglobalid = medication.drugid, d_references.referenceglobalid = cases.hospitaldischargetype, d_references.referenceglobalid = cases.dischargestate, d_references.referenceglobalid = cases.dischargeunit, d_references.referenceglobalid = cases.estimatedsurvivalobservationtime, d_references.referenceglobalid = cases.sex]}

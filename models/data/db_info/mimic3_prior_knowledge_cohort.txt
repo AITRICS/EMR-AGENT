@@ -1,0 +1,3 @@
+1. Exclude all tables and values related to Apache. Apache scores record the worst patient state within the first 24 hours after ICU admission.
+2. Use only values from the chartevents and labevents tables.
+3. To get the patient's age as an integer, use icu intime columns and birth year. Do not use current date, but use year and month information to calculate patient age.

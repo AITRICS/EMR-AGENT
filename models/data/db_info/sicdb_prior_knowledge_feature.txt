@@ -1,0 +1,4 @@
+1. For vital-sign features, use only the data_float_h table and d_references as the definition table.
+2. Out of many ids, we picked 'dataid' column as the vital sign mapping code.
+3. For Lab-Test features, always include laboratory table as definition table.
+4. Out of many ids, we picked 'laboratoryid' column as the Lab-Test mapping code.
