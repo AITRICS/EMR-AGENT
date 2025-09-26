@@ -1,0 +1,6 @@
+{
+    "path_source_mimic3": "TODO: set path to MIMIC-III data",
+    "path_source_eicu": "TODO: set path to eICU data",
+    "path_source_sicdb": "TODO: set path to SICdb data",
+    "path_evaluation": "TODO: set path for evaluation results"
+} 
