@@ -13,15 +13,15 @@ This repository contains reproduction code for generating evaluation datasets fr
 
 ## ⚠️ Important Notice
 **PhysioNet Data Access Requirements**
-You cannot run this repository without approved access to PhysioNet datasets. To obtain access:
-1. Complete the required training course at [PhysioNet](https://physionet.org/)
-2. Sign the data use agreement for each dataset
-3. Download the approved datasets independently  
+
+You cannot run this repository without approved access to PhysioNet datasets. To obtain access, you must first create an account on PhysioNet and complete the required credentialing process, including agreeing to the data use agreement.
 
 **No Raw Data Included**
+
 This repository contains only preprocessing code. No clinical data is provided due to privacy and licensing restrictions.  
 
 **Execution Method**
+
 Unlike some other benchmarks that provide a single `run.sh` script, this project requires running Python scripts directly. Each dataset has its own evaluation script (e.g., `python evaluation_mimic3.py`).  
 
 
@@ -50,18 +50,21 @@ Unlike some other benchmarks that provide a single `run.sh` script, this project
 
 ### Setup Instructions
 1. **Prepare Data Directories**
+
    Create local directories for each dataset:
    ```bash
    mkdir mimic3 eicu sicdb
    ```
 
 2. **Download PhysioNet Data**
+
    Place your downloaded files into the corresponding folders:
    - MIMIC-III CSV files (*.csv.gz) → `mimic3/`
    - eICU CSV files (*.csv.gz) → `eicu/`  
    - SICdb CSV files (*.csv.gz) → `sicdb/`
 
 3. **Configure Paths**
+
    Edit `path.json` with your data directories:
    ```json
    {
@@ -73,14 +76,14 @@ Unlike some other benchmarks that provide a single `run.sh` script, this project
    ```
    ⚠️ **Important:** If `path.json` is not updated, the scripts will fail with a `FileNotFoundError`.
 
-   The `path_evaluation` directory will serve as the root for storing results. Inside this folder, an `evaluation_set/` directory will be created automatically.
+     The `path_evaluation` directory will serve as the root for storing results. Inside this folder, an `evaluation_set/` directory will be created automatically.
 
-4. **Install Requirements**
+5. **Install Requirements**
    ```bash
    pip install -r requirements.txt
    ```
 
-5. **Generate Evaluation Sets**
+6. **Generate Evaluation Sets**
    Run the scripts individually:
    ```bash
    python evaluation_mimic3.py
@@ -106,4 +109,4 @@ Each script generates evaluation datasets inside:
 
 
 ## ✅ Notes
-- Always verify that your local dataset paths are consistent with `path.json`.
+Always verify that your local dataset paths are consistent with `path.json`.
