@@ -1,0 +1,2073 @@
+{
+  "Heart rate": {
+    "category": "vitals",
+    "sources": {
+      "eicu": [
+        {
+          "raw_text": "heartrate",
+          "table": "vitalperiodic",
+          "column": "heartrate",
+          "format": "wide"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            211,
+            220045
+          ],
+          "raw_text": [
+            "Heart Rate",
+            "Heart Rate"
+          ],
+          "table": "chartevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            724,
+            707,
+            708
+          ],
+          "raw_text": [
+            "HeartRateABP",
+            "HeartRateECG",
+            "HeartRateSPO2"
+          ],
+          "table": "data_float_h",
+          "column": "dataid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Core body temperature": {
+    "category": "vitals",
+    "sources": {
+      "eicu": [
+        {
+          "raw_text": "temperature",
+          "table": "vitalperiodic",
+          "column": "temperature",
+          "format": "wide"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            223761,
+            223762,
+            676,
+            677,
+            678,
+            679
+          ],
+          "raw_text": [
+            "Temperature Fahrenheit",
+            "Temperature Celsius",
+            "Temperature C",
+            "Temperature C (calc)",
+            "Temperature F",
+            "Temperature F (calc)"
+          ],
+          "table": "chartevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 709,
+          "raw_text": "Temperature",
+          "table": "data_float_h",
+          "column": "dataid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Invasive systolic arterial pressure": {
+    "category": "vitals",
+    "sources": {
+      "eicu": [
+        {
+          "raw_text": "systemicsystolic",
+          "table": "vitalperiodic",
+          "column": "systemicsystolic",
+          "format": "wide"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            220050,
+            225309,
+            228152,
+            51,
+            6,
+            6701
+          ],
+          "raw_text": [
+            "Arterial Blood Pressure systolic",
+            "ART BP Systolic",
+            "Aortic Pressure Signal - Systolic",
+            "Arterial BP [Systolic]",
+            "ABP [Systolic]",
+            "Arterial BP #2 [Systolic]"
+          ],
+          "table": "chartevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 701,
+          "raw_text": "BloodPressureArterialSystolic",
+          "table": "data_float_h",
+          "column": "dataid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Invasive diastolic arterial pressure": {
+    "category": "vitals",
+    "sources": {
+      "eicu": [
+        {
+          "raw_text": "systemicdiastolic",
+          "table": "vitalperiodic",
+          "column": "systemicdiastolic",
+          "format": "wide"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            220051,
+            225310,
+            8368,
+            8555
+          ],
+          "raw_text": [
+            "Arterial Blood Pressure diastolic",
+            "ART BP Diastolic",
+            "Arterial BP [Diastolic]",
+            "Arterial BP #2 [Diastolic]"
+          ],
+          "table": "chartevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 702,
+          "raw_text": "BloodPressureArterialDiastolic",
+          "table": "data_float_h",
+          "column": "dataid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Invasive mean arterial pressure": {
+    "category": "vitals",
+    "sources": {
+      "eicu": [
+        {
+          "raw_text": "systemicmean",
+          "table": "vitalperiodic",
+          "column": "systemicmean",
+          "format": "wide"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            220052,
+            224,
+            224322,
+            225312,
+            2294,
+            2647,
+            2732,
+            52,
+            5702,
+            5731,
+            6590,
+            6653,
+            6702,
+            6927
+          ],
+          "raw_text": [
+            "Arterial Blood Pressure mean",
+            "IABP Mean",
+            "IABP Mean",
+            "ART BP mean",
+            "ART MEAN",
+            "art mean",
+            "Femoral ABP (Mean)",
+            "Arterial BP Mean",
+            "FEM ART MEAN",
+            "FEMORAL ABP MEAN",
+            "arterial mean #2",
+            "femoral abp mean",
+            "Arterial BP Mean #2",
+            "Arterial Mean #3"
+          ],
+          "table": "chartevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 703,
+          "raw_text": "BloodPressureArterialMAP",
+          "table": "data_float_h",
+          "column": "dataid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Non-invasive systolic arterial pressure": {
+    "category": "vitals",
+    "sources": {
+      "eicu": [
+        {
+          "raw_text": "noninvasivesystolic",
+          "table": "vitalaperiodic",
+          "column": "noninvasivesystolic",
+          "format": "wide"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            220179,
+            224167,
+            227243,
+            3313,
+            3315,
+            3317,
+            3321,
+            3323,
+            442,
+            455
+          ],
+          "raw_text": [
+            "Non Invasive Blood Pressure systolic",
+            "Manual Blood Pressure Systolic Left",
+            "Manual Blood Pressure Systolic Right",
+            "BP Cuff [Systolic]",
+            "BP Left Arm [Systolic]",
+            "BP Left Leg [Systolic]",
+            "BP Right Arm [Systolic]",
+            "BP Right Leg [Systolic]",
+            "Manual BP [Systolic]",
+            "NBP [Systolic]"
+          ],
+          "table": "chartevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 704,
+          "raw_text": "BloodPressureNISystolic",
+          "table": "data_float_h",
+          "column": "dataid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Non-invasive diastolic arterial pressure": {
+    "category": "vitals",
+    "sources": {
+      "eicu": [
+        {
+          "raw_text": "noninvasivediastolic",
+          "table": "vitalaperiodic",
+          "column": "noninvasivediastolic",
+          "format": "wide"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            220180,
+            224643,
+            227242,
+            8440,
+            8441,
+            8502,
+            8503,
+            8504,
+            8506,
+            8507
+          ],
+          "raw_text": [
+            "Non Invasive Blood Pressure diastolic",
+            "Manual Blood Pressure Diastolic Left",
+            "Manual Blood Pressure Diastolic Right",
+            "Manual BP [Diastolic]",
+            "NBP [Diastolic]",
+            "BP Cuff [Diastolic]",
+            "BP Left Arm [Diastolic]",
+            "BP Left Leg [Diastolic]",
+            "BP Right Arm [Diastolic]",
+            "BP Right Leg [Diastolic]"
+          ],
+          "table": "chartevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 705,
+          "raw_text": "BloodPressureNIDiastolic",
+          "table": "data_float_h",
+          "column": "dataid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Non-invasive mean arterial pressure": {
+    "category": "vitals",
+    "sources": {
+      "eicu": [
+        {
+          "raw_text": "noninvasivemean",
+          "table": "vitalaperiodic",
+          "column": "noninvasivemean",
+          "format": "wide"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            220181,
+            3312,
+            3314,
+            3316,
+            3320,
+            3322,
+            443,
+            456,
+            7618,
+            7620,
+            7622
+          ],
+          "raw_text": [
+            "Non Invasive Blood Pressure mean",
+            "BP Cuff [Mean]",
+            "BP Left Arm [Mean]",
+            "BP Left Leg [Mean]",
+            "BP Right Arm [Mean]",
+            "BP Right Leg [Mean]",
+            "Manual BP Mean(calc)",
+            "NBP Mean",
+            "BP Lt. leg Mean",
+            "BP Rt. Arm Mean",
+            "BP Rt. Leg Mean"
+          ],
+          "table": "chartevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 706,
+          "raw_text": "BloodPressureNIMAP",
+          "table": "data_float_h",
+          "column": "dataid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Respiratory rate": {
+    "category": "vitals",
+    "sources": {
+      "eicu": [
+        {
+          "raw_text": "respiration",
+          "table": "vitalperiodic",
+          "column": "respiration",
+          "format": "wide"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            220210,
+            224688,
+            224689,
+            224690,
+            618,
+            619
+          ],
+          "raw_text": [
+            "Respiratory Rate",
+            "Respiratory Rate (Set)",
+            "Respiratory Rate (spontaneous)",
+            "Respiratory Rate (Total)",
+            "Respiratory Rate",
+            "Respiratory Rate Set"
+          ],
+          "table": "chartevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            2282,
+            719,
+            2274
+          ],
+          "raw_text": [
+            "RespRate",
+            "RespRate",
+            "RespRateEKG"
+          ],
+          "table": "data_float_h",
+          "column": "dataid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Base excess in Arterial blood by calculation": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "Base Excess",
+          "raw_text": "Base Excess",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50802,
+          "raw_text": "Base Excess",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            668,
+            449,
+            669
+          ],
+          "raw_text": [
+            "BE (B) (BGA)",
+            "BE (ZL)",
+            "BE ecf (BGA)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Hemoglobin [Mass/volume] in Arterial blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "Hgb",
+          "raw_text": "Hgb",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            50811,
+            50855,
+            51222
+          ],
+          "raw_text": [
+            "Hemoglobin",
+            "Absolute Hemoglobin",
+            "Hemoglobin"
+          ],
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            288,
+            658,
+            289
+          ],
+          "raw_text": [
+            "Hämoglobin (BG) (ZL)",
+            "Hämoglobin (BGA)",
+            "Hämoglobin (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Bicarbonate [Moles/volume] in Arterial blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": [
+            "bicarbonate",
+            "HCO3"
+          ],
+          "raw_text": [
+            "bicarbonate",
+            "HCO3"
+          ],
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            50803,
+            50882
+          ],
+          "raw_text": [
+            "Calculated Bicarbonate, Whole Blood",
+            "Bicarbonate"
+          ],
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            451,
+            456,
+            666
+          ],
+          "raw_text": [
+            "Akt. Bicarbonat (ZL)",
+            "Bicarbonat (ZL)",
+            "HCO3 act (BGA)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Lactate [Mass/volume] in Arterial blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "lactate",
+          "raw_text": "lactate",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50813,
+          "raw_text": "Lactate",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            454,
+            657,
+            465
+          ],
+          "raw_text": [
+            "Lactat (BG) (ZL)",
+            "Lactat (BGA)",
+            "Lactat (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Methemoglobin/Hemoglobin.total in Arterial blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "Methemoglobin",
+          "raw_text": "Methemoglobin",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50814,
+          "raw_text": "Methemoglobin",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            181,
+            661
+          ],
+          "raw_text": [
+            "Frakt.Met-Hämoglobin (ZL)",
+            "Met-Hämoglobin (BGA)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "pH of Arterial blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "pH",
+          "raw_text": "pH",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            50820,
+            50831
+          ],
+          "raw_text": [
+            "pH",
+            "pH"
+          ],
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            688,
+            538
+          ],
+          "raw_text": [
+            "PH (BGA)",
+            "pH (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Carbon dioxide [Partial pressure] in Arterial blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "paCO2",
+          "raw_text": "paCO2",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50818,
+          "raw_text": "pCO2",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            687,
+            443
+          ],
+          "raw_text": [
+            "PCO2 (BGA)",
+            "PCO2 (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Oxygen saturation in Arterial blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "O2 Sat (%)",
+          "raw_text": "O2 Sat (%)",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50817,
+          "raw_text": "Oxygen Saturation",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            690,
+            184
+          ],
+          "raw_text": [
+            "SO2 (BGA)",
+            "sO2 (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Troponin T.cardiac [Mass/volume] in Serum or Plasma": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "troponin - T",
+          "raw_text": "troponin - T",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 51003,
+          "raw_text": "Troponin T",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 481,
+          "raw_text": "hs Troponin T (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Potassium [Moles/volume] in Blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "potassium",
+          "raw_text": "potassium",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            50822,
+            50833,
+            50971
+          ],
+          "raw_text": [
+            "Potassium, Whole Blood",
+            "Potassium",
+            "Potassium"
+          ],
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            453,
+            685,
+            463
+          ],
+          "raw_text": [
+            "Kalium (BG) (ZL)",
+            "Kalium (BGA)",
+            "Kalium (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Sodium [Moles/volume] in Blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "sodium",
+          "raw_text": "sodium",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            50824,
+            50983
+          ],
+          "raw_text": [
+            "Sodium, Whole Blood",
+            "Sodium"
+          ],
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            455,
+            686,
+            469
+          ],
+          "raw_text": [
+            "Natrium (BG) (ZL)",
+            "Natrium (BGA)",
+            "Natrium (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Chloride [Moles/volume] in Blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "chloride",
+          "raw_text": "chloride",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            50806,
+            50902
+          ],
+          "raw_text": [
+            "Chloride, Whole Blood",
+            "Chloride"
+          ],
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            683,
+            450
+          ],
+          "raw_text": [
+            "Chlorid (BGA)",
+            "Chlorid (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Calcium.ionized [Moles/volume] in Blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "ionized calcium",
+          "raw_text": "ionized calcium",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50808,
+          "raw_text": "Free Calcium",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            655,
+            452
+          ],
+          "raw_text": [
+            "Calcium (i) (BGA)",
+            "Calcium ionisiert (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Calcium [Moles/volume] in Blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "calcium",
+          "raw_text": "calcium",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50893,
+          "raw_text": "Calcium, Total",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            671,
+            457,
+            459
+          ],
+          "raw_text": [
+            "Ca (pH) (BGA)",
+            "Calcium (ZL)",
+            "Calcium(CKR) (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Phosphate [Moles/volume] in Blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "phosphate",
+          "raw_text": "phosphate",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50970,
+          "raw_text": "Phosphate",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 423,
+          "raw_text": "Phenytoin (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Magnesium [Moles/volume] in Blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "magnesium",
+          "raw_text": "magnesium",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50960,
+          "raw_text": "Magnesium",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 468,
+          "raw_text": "Magnesium (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Creatinine [Moles/volume] in Blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "creatinine",
+          "raw_text": "creatinine",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50912,
+          "raw_text": "Creatinine",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            369,
+            367,
+            368,
+            339
+          ],
+          "raw_text": [
+            "Kreatinin (HPM) (ZL)",
+            "Kreatinin (ZL)",
+            "Kreatinin enzymatisch (ZL)",
+            "Kreatinin(CKR) (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "AST (SGOT)",
+          "raw_text": "AST (SGOT)",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50878,
+          "raw_text": "Asparate Aminotransferase (AST)",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 616,
+          "raw_text": "GOT ( AST) (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "ALT (SGPT)",
+          "raw_text": "ALT (SGPT)",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50861,
+          "raw_text": "Alanine Aminotransferase (ALT)",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 617,
+          "raw_text": "GPT (ALT / ALAT) (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Bilirubin.total [Moles/volume] in Serum or Plasma": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "total bilirubin",
+          "raw_text": "total bilirubin",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50885,
+          "raw_text": "Bilirubin, Total",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 333,
+          "raw_text": "Bilirubin (gesamt) (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Bilirubin.direct [Mass/volume] in Serum or Plasma": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "direct bilirubin",
+          "raw_text": "direct bilirubin",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50883,
+          "raw_text": "Bilirubin, Direct",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 332,
+          "raw_text": "Bilirubin (direkt) (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Alkaline phosphatase [Enzymatic activity/volume] in Blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "alkaline phos.",
+          "raw_text": "alkaline phos.",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50863,
+          "raw_text": "Alkaline Phosphatase",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 609,
+          "raw_text": "Alkalische Phosphatase (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "aPTT in Blood by Coagulation assay": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "PTT",
+          "raw_text": "PTT",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 597,
+          "raw_text": "APTT (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Fibrinogen [Mass/volume] in Platelet poor plasma by Coagulation assay": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "fibrinogen",
+          "raw_text": "fibrinogen",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 51214,
+          "raw_text": "Fibrinogen, Functional",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 344,
+          "raw_text": "Fibrinogen (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "INR in Blood by Coagulation assay": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "PT - INR",
+          "raw_text": "PT - INR",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 51237,
+          "raw_text": "INR(PT)",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Albumin [Mass/volume] in Serum or Plasma": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "albumin",
+          "raw_text": "albumin",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50862,
+          "raw_text": "Albumin",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 287,
+          "raw_text": "Serum-Albumin (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Glucose [Moles/volume] in Serum or Plasma": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": [
+            "bedside glucose",
+            "glucose"
+          ],
+          "raw_text": [
+            "bedside glucose",
+            "glucose"
+          ],
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            50809,
+            50931,
+            51529
+          ],
+          "raw_text": [
+            "Glucose",
+            "Glucose",
+            "Estimated Actual Glucose"
+          ],
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            656,
+            348
+          ],
+          "raw_text": [
+            "Glukose (BGA)",
+            "Glukose (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "C reactive protein [Mass/volume] in Serum or Plasma": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "CRP",
+          "raw_text": "CRP",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50889,
+          "raw_text": "C-Reactive Protein",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 341,
+          "raw_text": "C-reaktives Protein (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Lymphocytes [#/volume] in Blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "#NAME?",
+          "raw_text": "#NAME?",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            51244,
+            51245
+          ],
+          "raw_text": [
+            "Lymphocytes",
+            "Lymphocytes, Percent"
+          ],
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            303,
+            302
+          ],
+          "raw_text": [
+            "Lymphocyten abs. Handdiff. (ZL)",
+            "Lymphocyten absolut (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Neutrophils/100 leukocytes in Blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "#NAME?",
+          "raw_text": "#NAME?",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 51256,
+          "raw_text": "Neutrophils",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            308,
+            309
+          ],
+          "raw_text": [
+            "Neutr. Granulocyten abs (ZL)",
+            "Neutr.Granuloc.abs.Handdiff. (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Platelets [#/volume] in Blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "platelets x 1000",
+          "raw_text": "platelets x 1000",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 51265,
+          "raw_text": "Platelet Count",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            314,
+            315
+          ],
+          "raw_text": [
+            "Thrombocyten (ZL)",
+            "Thrombocyten/Citratblut (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Urea nitrogen [Mass/volume] in Serum or Plasma": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "BUN",
+          "raw_text": "BUN",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 51006,
+          "raw_text": "Urea Nitrogen",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Cholesterol [Mass/volume] in Serum or Plasma": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "total cholesterol",
+          "raw_text": "total cholesterol",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50907,
+          "raw_text": "Cholesterol, Total",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 338,
+          "raw_text": "Cholesterin (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Hematocrit [Volume Fraction] of Blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "Hct",
+          "raw_text": "Hct",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            50810,
+            51221
+          ],
+          "raw_text": [
+            "Hematocrit, Calculated",
+            "Hematocrit"
+          ],
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            183,
+            682,
+            217
+          ],
+          "raw_text": [
+            "Hämatokrit (BG) (ZL)",
+            "Hämatokrit (BGA)",
+            "Hämatokrit (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Oxygen measurement, partial pressure, arterial": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "paO2",
+          "raw_text": "paO2",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": [
+            50821,
+            50832
+          ],
+          "raw_text": [
+            "pO2",
+            "pO2, Body Fluid"
+          ],
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 679,
+          "raw_text": "pO2 (A-a) (T) (BGA)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Troponin I measurement": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "troponin - I",
+          "raw_text": "troponin - I",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 51002,
+          "raw_text": "Troponin I",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 270,
+          "raw_text": "Troponin I (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Partial thromboplastin time ratio": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "PTT ratio",
+          "raw_text": "PTT ratio",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 51275,
+          "raw_text": "PTT",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Creatine kinase [Mass/volume] in Blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "CPK",
+          "raw_text": "CPK",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50910,
+          "raw_text": "Creatine Kinase (CK)",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 611,
+          "raw_text": "Creatinkinase (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Creatine kinase.MB [Mass/volume] in Blood": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "CPK-MB",
+          "raw_text": "CPK-MB",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 50911,
+          "raw_text": "Creatine Kinase, MB Isoenzyme",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "MCH - Mean corpuscular haemoglobin": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "MCH",
+          "raw_text": "MCH",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 51248,
+          "raw_text": "MCH",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 566,
+          "raw_text": "MCH (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "MCHC [Mass/volume]": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "MCHC",
+          "raw_text": "MCHC",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 51249,
+          "raw_text": "MCHC",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 290,
+          "raw_text": "MCHC (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "MCV [Entitic volume]": {
+    "category": "labs",
+    "sources": {
+      "eicu": [
+        {
+          "idx": "MCV",
+          "raw_text": "MCV",
+          "table": "lab",
+          "column": "labname",
+          "format": "long"
+        }
+      ],
+      "mimic3": [
+        {
+          "idx": 51250,
+          "raw_text": "MCV",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 286,
+          "raw_text": "MCV (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Oxygen [Partial pressure] in Arterial blood": {
+    "category": "labs",
+    "sources": {
+      "mimic3": [
+        {
+          "idx": 50816,
+          "raw_text": "Oxygen",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": [
+            680,
+            689
+          ],
+          "raw_text": [
+            "pO2 (A/a) (T) (BGA)",
+            "PO2 (BGA)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Band form neutrophils/100 leukocytes in Blood": {
+    "category": "labs",
+    "sources": {
+      "mimic3": [
+        {
+          "idx": 51144,
+          "raw_text": "Bands",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 240,
+          "raw_text": "Stabkernige Handdiff. (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Leukocytes [#/volume] in Blood": {
+    "category": "labs",
+    "sources": {
+      "mimic3": [
+        {
+          "idx": 51486,
+          "raw_text": "Leukocytes",
+          "table": "labevents",
+          "column": "itemid",
+          "format": "long"
+        }
+      ],
+      "sicdb": [
+        {
+          "idx": 301,
+          "raw_text": "Leukocyten (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Creatine kinase.MB [Mass/volume] in Serum or Plasma": {
+    "category": "labs",
+    "sources": {
+      "sicdb": [
+        {
+          "idx": 253,
+          "raw_text": "CK-MB-Massenkonzentration (ZL)",
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  },
+  "Urea [Moles/volume] in Venous blood": {
+    "category": "labs",
+    "sources": {
+      "sicdb": [
+        {
+          "idx": [
+            354,
+            355
+          ],
+          "raw_text": [
+            "Harnsäure (ZL)",
+            "Harnstoff (ZL)"
+          ],
+          "table": "laboratory",
+          "column": "laboratoryid",
+          "format": "long"
+        }
+      ]
+    }
+  }
+}
