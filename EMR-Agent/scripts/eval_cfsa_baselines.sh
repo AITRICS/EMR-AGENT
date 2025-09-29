@@ -2,7 +2,7 @@
 
 folder_name="bs_react_cohort"
 framework_name="BS_REACT"
-Generated_Cohort_Path="/home/destin/LLM4EMR_DB_TEMP/LLM4EMR_DB_CMA/results/${folder_name}/"
+Generated_Cohort_Path="${RESULTS_BASE_PATH:-./results}/${folder_name}/"
 Test_Data_Path="./test_data"
 
 model_name="claude-3-5-sonnet-20240620"
@@ -96,17 +96,17 @@ for i in "${!Generated_Cohorts_Features[@]}"; do
         --column-set "$Column_Set"
 done
 
-Generated_Cohort_Path="/home/destin/LLM4EMR_DB_TEMP/LLM4EMR_DB_CMA/results/${folder_name}/"
+Generated_Cohort_Path="${RESULTS_BASE_PATH:-./results}/${folder_name}/"
 expected_sampple_num=70
 DB_Name="mimic3"
 python ./cohort_evaluation.py --generated-cohort-path ${Generated_Cohort_Path} --db-name ${DB_Name} --expected-sample-num ${expected_sampple_num}
 
-Generated_Cohort_Path="/home/destin/LLM4EMR_DB_TEMP/LLM4EMR_DB_CMA/results/${folder_name}/"
+Generated_Cohort_Path="${RESULTS_BASE_PATH:-./results}/${folder_name}/"
 expected_sampple_num=70
 DB_Name="eicu"
 python ./cohort_evaluation.py --generated-cohort-path ${Generated_Cohort_Path} --db-name ${DB_Name} --expected-sample-num ${expected_sampple_num}
 
-Generated_Cohort_Path="/home/destin/LLM4EMR_DB_TEMP/LLM4EMR_DB_CMA/results/${folder_name}/"
+Generated_Cohort_Path="${RESULTS_BASE_PATH:-./results}/${folder_name}/"
 expected_sampple_num=70
 DB_Name="sicdb"
 python ./cohort_evaluation.py --generated-cohort-path ${Generated_Cohort_Path} --db-name ${DB_Name} --expected-sample-num ${expected_sampple_num}

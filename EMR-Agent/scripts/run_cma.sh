@@ -68,7 +68,7 @@ for DB in "${DATABASES[@]}"; do
     for TARGET_FEATURE in "${TARGET_FEATURES[@]}"; do
         for trial_idx in $(seq 0 $TRIAL_NUM); do
             CASE_NUM=0
-            python ./models/EMR-SQL_V10.py \
+            python ./models/EMR_AGENT.py \
                 --api-key "$API_KEY" \
                 --target-database "$DB" \
                 --database-knowledge db_and_manual_and_prior \

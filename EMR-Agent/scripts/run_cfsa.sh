@@ -82,7 +82,7 @@ for trial_idx in $(seq 1 $TRIAL_NUM); do
         FEATURES="${REQUESTED_FEATURES[$i]}"
         CASE_NAME="${CASE_NAMES[$i]}"
         DB="${DATABASES[$i]}"
-        python ./models/EMR-SQL_V10.py \
+        python ./models/EMR_AGENT.py \
             --target-database "$DB" \
             --database-knowledge db_and_manual_and_prior \
             --cohort-selection "$COHORT" \

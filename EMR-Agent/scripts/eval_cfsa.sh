@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Generated_Cohort_Path="/home/destin/LLM4EMR_DB_TEMP/LLM4EMR_DB_CMA/results/claude_haiku_sicdb"
+Generated_Cohort_Path="${RESULTS_BASE_PATH:-./results}/claude_haiku_sicdb"
 Test_Data_Path="./test_data"
 
 model_name="claude-3-5-haiku-latest" 
