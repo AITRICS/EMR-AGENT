@@ -20,15 +20,14 @@ EMR-Agent/
 
 ## 🚀 Key Features
 
-### 1. CMA (Cohort generation with Main Agent)
-- **Purpose**: Generate patient cohorts from medical data
+### 1. CFSA (Cohort and Feature Selection Agent)  
+- **Purpose**: Extract patient cohorts and feature from medical data
 - **Input**: Cohort selection criteria, requested features
-- **Output**: Generated cohort data
-- **Model**: Based on EMR_AGENT.py
+- **Output**: Generated cohort with feature
 
-### 2. CFSA (Clinical Feature Selection and mapping Agent)  
+### 1. CMA (Code Mapping Agent)
 - **Purpose**: Mapping and selection of clinical features
-- **Input**: Time-series features, target database
+- **Input**: vital-sign or laboratory features
 - **Output**: Feature mapping results
 
 ## 🗃️ Supported Databases
@@ -93,27 +92,12 @@ chmod +x scripts/*.sh
 ./scripts/eval_cfsa_baselines.sh
 ```
 
-## 📊 Script Description
-
-### Run Scripts
-- **`run_cma.sh`**: Cohort generation experiment with main EMR agent
-- **`run_cma_react.sh`**: ReAct-style cohort generation experiment
-- **`run_cma_baselines.sh`**: Cohort generation baseline experiment
-- **`run_cfsa.sh`**: Feature mapping main experiment
-- **`run_cfsa_baselines.sh`**: Feature mapping baseline experiment
-
-### Evaluation Scripts
-- **`eval_cma.sh`**: Cohort generation results evaluation
-- **`eval_cma_baselines.sh`**: Cohort generation baseline evaluation
-- **`eval_cfsa.sh`**: Feature mapping results evaluation
-- **`eval_cfsa_baselines.sh`**: Feature mapping baseline evaluation
-
 ## 🔧 Key Parameters
 
 ### Common Parameters
 ```bash
 --target-database          # Target database (eicu|mimic3|sicdb)
---database-knowledge       # Database knowledge type (db_and_manual_and_prior|db_only)
+--database-knowledge       # external knowledge type (db_and_manual_and_prior|db_only)
 --llm-model               # Language model to use (claude-3-5-sonnet-20240620|claude-3-5-haiku-latest)
 --trial-num               # Number of experiment repetitions (integer)
 --agent-part              # Agent part (cohort|feature_mapping)
@@ -121,20 +105,7 @@ chmod +x scripts/*.sh
 --max-retries             # Maximum number of retries (default: 3)
 ```
 
-### CMA (Cohort generation) Specific Parameters
-```bash
---cohort-selection        # Cohort selection criteria (string)
---requested-features      # Requested feature list (string)
---case-name              # Case name (identifier)
-```
-
-### CFSA (Clinical Feature Selection) Specific Parameters
-```bash
---timeseries-feature     # Time-series feature name (string)
-```
-
 ## 🧩 Ablation Study Modules
-
 EMR-Agent supports the following ablation modules:
 
 ### 🎯 Schema Guideline Module (`--schema-guideline`)
@@ -242,46 +213,3 @@ python ./models/EMR_AGENT.py --target-database mimic3 --agent-part cohort \
 # 5. Base model (all ablation modules disabled)
 python ./models/EMR_AGENT.py --target-database mimic3 --agent-part cohort [other-args]
 ```
-
-## 📈 Performance Metrics
-
-### CMA (Cohort Generation)
-- Accuracy
-- F1 Score
-- Sample Count Matching Rate
-
-### CFSA (Feature Mapping)
-- Mapping Accuracy
-- Feature Detection Rate
-- Database-specific Performance
-
-## ⚠️ Important Notes
-
-1. **Environment Variables**: If `RESULTS_BASE_PATH` is not set, the `./results` directory will be used by default.
-
-2. **File Paths**: All scripts must be executed from the EMR-Agent root directory.
-
-3. **Permissions**: Check execution permissions before running scripts.
-
-4. **API Key**: A valid API key is required when using Claude API.
-
-## 🐛 Troubleshooting
-
-### Common Errors
-- **Permission denied**: Run `chmod +x scripts/*.sh`
-- **Directory not found**: Check `RESULTS_BASE_PATH` environment variable
-- **Python module not found**: Verify required package installation
-- **API key error**: Check API key configuration
-
-### Debugging Tips
-- Each script outputs detailed execution logs
-- Check logs to identify the cause when errors occur
-- Set `--trial-num 1` for quick testing
-
-## 📞 Support
-
-For project-related questions or issues, please contact us through GitHub Issues.
-
----
-
-💡 **Tip**: Verify that test data and required directories exist before running experiments.
