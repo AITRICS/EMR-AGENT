@@ -18,8 +18,8 @@ EMR-AGENT/
 An advanced AI agent system for automated patient cohort generation and clinical feature mapping from EMR databases.
 
 **Key Features:**
-- **CMA (Cohort generation with Main Agent)**: Automated patient cohort extraction
-- **CFSA (Clinical Feature Selection and mapping Agent)**: Clinical feature mapping and selection
+- **CFSA (Cohort and Feature Selection Agent)**: Automated patient cohort and feature extraction
+- **CMA (Code Mapping Agent)**: Clinical feature mapping and selection
 - Support for multiple EMR databases (eICU, MIMIC-III, SICdb)
 - Ablation study modules for comprehensive evaluation
 
@@ -54,20 +54,6 @@ pip install -r requirements.txt
 
 2. **For PreCISE-EMR**: Navigate to the `PreCISE-EMR/` directory and follow the instructions in [`PreCISE-EMR/README.md`](PreCISE-EMR/README.md)
 
-## 📚 Documentation
-
-Each project contains its own comprehensive documentation:
-
-- **[EMR-Agent Documentation](EMR-Agent/README.md)** - Complete guide for the EMR Agent system
-- **[PreCISE-EMR Documentation](PreCISE-EMR/README.md)** - Complete guide for the PreCISE-EMR toolkit
-
-## 🎯 Use Cases
-
-- **Healthcare Researchers**: Automated cohort identification and feature extraction
-- **Data Scientists**: EMR data preprocessing and analysis
-- **Clinical Researchers**: Patient population studies and clinical feature analysis
-- **Healthcare Analytics**: Large-scale EMR data processing
-
 ## 📄 Citation
 
 If you use this repository in your research, please cite our work:
@@ -80,27 +66,3 @@ If you use this repository in your research, please cite our work:
   year={[Year]}
 }
 ```
-
-## 🤝 Contributing
-
-We welcome contributions! Please see the individual project READMEs for specific contribution guidelines.
-
-## 📞 Support
-
-For questions and support:
-- Check the relevant project's README for specific issues
-- Open an issue in the GitHub repository
-- Contact the development team
-
-## 📝 License
-
-This project is licensed under [License] - see the LICENSE file for details.
-
----
-
-**🔗 Quick Links:**
-- [EMR-Agent Setup Guide](EMR-Agent/README.md#quick-start)
-- [PreCISE-EMR Setup Guide](PreCISE-EMR/README.md)
-- [EMR-Agent Scripts Documentation](EMR-Agent/README.md#script-description)
-
-💡 **Tip**: Start with the project that best fits your use case - EMR-Agent for automated analysis or PreCISE-EMR for data preprocessing.
