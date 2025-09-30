@@ -30,12 +30,6 @@ EMR-Agent/
 - **Input**: vital-sign or laboratory features
 - **Output**: Feature mapping results
 
-## 🗃️ Supported Databases
-
-- **eICU**: eICU Collaborative Research Database
-- **MIMIC-III**: Medical Information Mart for Intensive Care III
-- **SICdb**: São Paulo ICU Database
-
 ## ⚙️ Environment Setup
 
 ### Required Environment Variables
@@ -48,15 +42,50 @@ export RESULTS_BASE_PATH="/path/to/your/results"
 export API_KEY="your-api-key-here"
 ```
 
-### Dependencies Installation
+## 🗄️ Database Environment Setup
 
+### Supported EMR Datasets
+
+EMR-Agent uses three publicly available EMR datasets for evaluation and operation:
+
+| Dataset | Version | Description |
+|---------|---------|-------------|
+| **MIMIC-III** | v1.4 | Medical Information Mart for Intensive Care III |
+| **eICU** | v2.0 | eICU Collaborative Research Database |
+| **SICdb** | v1.0.8 | Salzburg Intensive Care database |
+
+### Database Setup Instructions
+
+The datasets are configured using official open-source scripts to ensure consistent data processing and loading into PostgreSQL environments while preserving the original schema:
+
+#### 1. MIMIC-III Setup
 ```bash
-# Install Python packages
-pip install -r requirements.txt
+# Clone the official MIMIC-III build scripts
+git clone https://github.com/MIT-LCP/mimic-code.git
+cd mimic-code/mimic-iii/buildmimic/postgres
 
-# Grant execution permissions to scripts
-chmod +x scripts/*.sh
+# Follow the official setup instructions to load MIMIC-III data into PostgreSQL
+# Official repository: https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iii/buildmimic/postgres
 ```
+
+#### 2. eICU Setup
+```bash
+# Clone the official eICU build scripts
+git clone https://github.com/MIT-LCP/eicu-code.git
+cd eicu-code/build-db/postgres
+
+# Follow the official setup instructions to load eICU data into PostgreSQL
+# Official repository: https://github.com/MIT-LCP/eicu-code/tree/main/build-db/postgres
+```
+
+#### 3. SICdb Setup
+```bash
+# For SICdb, manually convert the provided CSV files into PostgreSQL
+# Download SICdb v1.0.8 CSV files from the official source
+# Create PostgreSQL database and import CSV files using standard PostgreSQL import tools
+```
+
+The resulting database environments are used to generate evaluation sets and support EMR-AGENT's operations with consistent data processing across all supported datasets.
 
 ## 🎯 Quick Start
 
