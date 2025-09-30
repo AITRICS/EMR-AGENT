@@ -25,7 +25,7 @@ EMR-Agent/
 - **Input**: Cohort selection criteria, requested features
 - **Output**: Generated cohort with feature
 
-### 1. CMA (Code Mapping Agent)
+### 2. CMA (Code Mapping Agent)
 - **Purpose**: Mapping and selection of clinical features
 - **Input**: vital-sign or laboratory features
 - **Output**: Feature mapping results
@@ -63,10 +63,10 @@ chmod +x scripts/*.sh
 ### 1. Basic Experiment Execution
 
 ```bash
-# CMA experiment (cohort generation)
+# CMA experiment
 ./scripts/run_cma.sh
 
-# CFSA experiment (feature mapping)
+# CFSA experiment
 ./scripts/run_cfsa.sh
 ```
 
@@ -110,4 +110,3 @@ EMR-Agent supports the following ablation modules:
 1. (`--schema-guideline`): Schema Guideline Module in both "CFSA" and "CMA" 
 2. (`--sql-observation`): SQL Observation Module in "CFSA" and Candidates Matching in "CMA"
 3. (`--sql-feedback`): SQL Feedback Module in "CFSA" 
-
