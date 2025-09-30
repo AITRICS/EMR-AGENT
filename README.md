@@ -9,8 +9,7 @@ This repository contains two main projects:
 ```
 EMR-AGENT/
 ├── EMR-Agent/          # Main EMR Agent system
-├── PreCISE-EMR/        # PreCISE-EMR preprocessing toolkit  
-└── README.md           # This file
+└── PreCISE-EMR/        # PreCISE-EMR preprocessing toolkit  
 ```
 
 ## 📁 Projects Overview
