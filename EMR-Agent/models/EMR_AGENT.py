@@ -750,7 +750,7 @@ if __name__ == '__main__':
     parser.add_argument('--api-key', type=str, default=None)
     args = parser.parse_args()
 
-    db_connector = PostgreSQLConnector(target_database=args.target_database, batch_size=args.database_batch_size, user="postgres", password="postgres")
+    db_connector = PostgreSQLConnector(target_database=args.target_database, batch_size=args.database_batch_size, user="postgres", password="")
     final_matching_result_dict = None
     
     os.environ["ANTHROPIC_API_KEY"] = args.api_key
