@@ -223,7 +223,7 @@ if __name__ == '__main__':
     API_KEY = ""
     os.environ["ANTHROPIC_API_KEY"] = API_KEY
 
-    db_connector = PostgreSQLConnector(target_database=args.target_database, batch_size=500, user="postgres", password="postgres")
+    db_connector = PostgreSQLConnector(target_database=args.target_database, batch_size=500, user="postgres", password="")
 
     results_dir = setup_logging(args.results_dir)
     if args.agent_part in ["cohort"]:

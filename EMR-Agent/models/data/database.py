@@ -3,7 +3,7 @@ from typing import List, Dict, Any, Optional
 from config import DATABASE_CONFIGS
 
 class DatabaseManager:
-    def __init__(self, target_database: str, batch_size: int, user: str = "postgres", password: str = "postgres"):
+    def __init__(self, target_database: str, batch_size: int, user: str = "postgres", password: str = ""):
         """Initialize database connection manager.
         
         Args:

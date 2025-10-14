@@ -35,7 +35,7 @@ class PostgreSQLConnector:
     target_database: str, 
     batch_size: int, 
     user: str = "postgres", 
-    password: str = "postgres"
+    password: str = ""
     ):
         self.target_database: str = target_database
         self.user: str = user

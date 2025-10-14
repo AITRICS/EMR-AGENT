@@ -113,7 +113,7 @@ def get_cohort(results_dir, target_database, database_knowledge, requested_featu
             prior_knowledge_db_specific = file.read()
 
     global db_connector
-    db_connector = PostgreSQLConnector(target_database=target_database, batch_size=500, user="postgres", password="postgres")
+    db_connector = PostgreSQLConnector(target_database=target_database, batch_size=500, user="postgres", password="")
 
     prompt = f"""You are given Database information and the Question. Generate the PostgreSQL query for the following question.
 Get only one SQL query as plain text. Do not include code delimiters (e.g., ```sql), comments, or any additional text. Execute the generated SQL query and validate the result. In the end, return the correct SQL query. If you cannot generate a valid SQL query, return "null".
@@ -225,7 +225,7 @@ def get_timeseries(results_dir, target_database, database_knowledge, timeseries_
             prior_knowledge_db_specific = file.read()
 
     global db_connector
-    db_connector = PostgreSQLConnector(target_database=target_database, batch_size=500, user="postgres", password="postgres")
+    db_connector = PostgreSQLConnector(target_database=target_database, batch_size=500, user="postgres", password="")
 
     prompt = """You are given a [Database schema] and a [Feature].
 Task: Analyze the information provided below and classify the feature into one of the following categories:

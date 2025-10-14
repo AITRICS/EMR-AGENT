@@ -652,7 +652,7 @@ if __name__ == '__main__':
         knowledge_source += ("DB Manual: " + database_manual)
     
     for trial_index in range(args.trial_num):
-        db_connector = PostgreSQLConnector(target_database=args.target_database, batch_size=args.database_batch_size, user="postgres", password="postgres")
+        db_connector = PostgreSQLConnector(target_database=args.target_database, batch_size=args.database_batch_size, user="postgres", password="")
 
         schema_linking_prompt_final = generate_schema_linking_prompt(db_connector)
         cohort_feature_agent(args, results_dir, schema_linking_prompt_final, trial_index)

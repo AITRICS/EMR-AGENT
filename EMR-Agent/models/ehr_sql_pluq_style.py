@@ -85,7 +85,7 @@ def get_cohort(results_dir, target_database, database_knowledge, requested_featu
         with open(f"./models/data/db_info/{target_database}_prior_knowledge_cohort.txt", 'r', encoding="UTF-8") as file:
             prior_knowledge_db_specific = file.read()
 
-    db_connector = PostgreSQLConnector(target_database=target_database, batch_size=500, user="postgres", password="postgres")
+    db_connector = PostgreSQLConnector(target_database=target_database, batch_size=500, user="postgres", password="")
 
     prompt = f"""You are given Database information and the Question. Generate the PostgreSQL query for the following question. Note that you should generate 'null' if the question cannot be converted to SQL query given information.
 Get only one SQL query as plain text. Do not include code delimiters (e.g., ```sql), comments, or any additional text.
@@ -183,7 +183,7 @@ def get_timeseries(results_dir, target_database, database_knowledge, timeseries_
         with open(f"./models/data/db_info/{target_database}_prior_knowledge_feature.txt", 'r', encoding="UTF-8") as file:
             prior_knowledge_db_specific = file.read()
 
-    db_connector = PostgreSQLConnector(target_database=target_database, batch_size=500, user="postgres", password="postgres")
+    db_connector = PostgreSQLConnector(target_database=target_database, batch_size=500, user="postgres", password="")
 
     prompt = """You are given a [Database schema] and a [Feature].
 Task: Analyze the information provided below and classify the feature into one of the following categories:
